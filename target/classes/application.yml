@@ -1,0 +1,33 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/patient
+    password: root
+  main:
+    allow-circular-references: 'true'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+        show_sql: 'true'
+    hibernate:
+      ddl-auto: update
+
+#  spring:
+#      h2:
+#        console:
+#          enabled: true
+
+keycloak:
+  realm: demo
+  auth-server-url: http://localhost:8080/auth
+  resource: demo-client
+  public-client: true
+  bearer-only: true
+
+
+
